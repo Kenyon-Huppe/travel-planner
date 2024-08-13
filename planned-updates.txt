@@ -1,0 +1,7 @@
+- Link app to AI API.
+- Load outgoing data into formatted string before API call is made.
+    - Only call API once data has been submitted by user.
+    - Once user submits data, pass to API component.
+- Load incoming data from AI API into `Output.tsx`.
+- Look into image scraping to display image that fits the outputted travel location.
+    - Load scraped image into `Output.tsx`.
