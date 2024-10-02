@@ -1,19 +1,27 @@
 'use client';
 import { ChangeEvent, FormEvent, useState } from "react";
 
-export default function Input() {
+interface InputProps {
+    submitHandler: (formData: any) => void;
+}
 
-    const submitHandler = (formData: any) => {
-        console.log(`${formData.get('type')} ${formData.get('temperature')} ${formData.getAll('activities')} ${formData.get('distance')}`);
-        const activitiesArr: string[] = formData.getAll('activities');
-        console.log('Activities: ' + activitiesArr[0]);
-    }
+// export const getServerSideProps = () => {
+//     console.log(process.env.GEMINI_API_KEY + 'thisssss');
+
+//     return {
+//         props: {
+//             hello: 'world'
+//         }
+//     }
+// }
+
+export default function Input({submitHandler}:InputProps) {
 
   return (
     <div className="flex flex-col items-center">
         <h3 className="text-2xl w-fit mb-4">Let's Make Some Memories</h3>
         <form action={submitHandler} className="flex flex-col items-center">
-            <section className="flex flex-wrap justify-around">
+            <section className="flex flex-col flex-wrap justify-around">
                 <div className="flex flex-col">
                     <h5 className="text-xl">Type of Trip</h5>
                     <label htmlFor="adventurous">
@@ -25,6 +33,7 @@ export default function Input() {
                         <span>Laid Back</span>
                     </label>
                 </div>
+                <hr className="my-5 border" />
                 <div className="flex flex-col">
                     <h5 className="text-xl">Temperature</h5>
                     <label htmlFor="hot">
@@ -40,6 +49,7 @@ export default function Input() {
                         <span>Cold</span>
                     </label>
                 </div>
+                <hr className="my-5 border" />
                 <div className="flex flex-col">
                     <h5 className="text-xl">Activities</h5>
                     <label htmlFor="beach">
@@ -63,6 +73,7 @@ export default function Input() {
                         <span>City life</span>
                     </label>
                 </div>
+                <hr className="my-5 border" />
                 <div className="flex flex-col">
                     <h5 className="text-xl">Distance</h5>
                     <label htmlFor="short">

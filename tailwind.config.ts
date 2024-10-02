@@ -13,6 +13,7 @@ const config: Config = {
         secondary: "#ABBC6D",
         tertiary: "#81B6BB",
         accent: "#D7C07C",
+        backgroundFilm: "#398f87",
       },
       container: {
         center: true,

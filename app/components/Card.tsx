@@ -1,6 +1,8 @@
-import React from 'react'
+'use server'
 
-export default function Card() {
+export default async function Card() {
+  console.log(process.env.NEXT_PUBLIC_GEMINI_API_KEY + ' THIS');
+
   return (
     <div className="">
 
